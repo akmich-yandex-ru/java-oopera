@@ -25,6 +25,6 @@ public class Actor extends Person {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(height);
+        return Objects.hash(super.hashCode(), height);
     }
 }

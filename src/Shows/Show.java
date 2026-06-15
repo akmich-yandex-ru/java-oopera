@@ -42,16 +42,19 @@ public class Show {
 
     public void replaceActor(Actor newActor, String surnameOfReplacingActor) {
         int indexToReplace = -1;
+        int countOfFoundedActors = 0;
 
         for (int i = 0; i < listOfActors.size(); i++) {
             if (listOfActors.get(i).getSurname().equals(surnameOfReplacingActor)) {
                 indexToReplace = i;
-                break;
+                countOfFoundedActors++;
             }
         }
 
         if (indexToReplace == -1) {
             System.out.println("Актера с фамилией " + surnameOfReplacingActor + " нет в списке");
+        } else if (countOfFoundedActors > 1) {
+            System.out.println("Замена не возможна, т.к. найдено несколько актеров с фамилией " + surnameOfReplacingActor);
         } else {
             listOfActors.set(indexToReplace, newActor);
             System.out.println("Актер с фамилией " + surnameOfReplacingActor + " успешно заменен на " + newActor.toString());

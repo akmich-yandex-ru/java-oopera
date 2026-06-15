@@ -6,8 +6,4 @@ public class Choreographer extends Person {
         super(name, surname, gender);
     }
 
-    @Override
-    public String toString() {
-        return name + " " + surname;
-    }
 }
